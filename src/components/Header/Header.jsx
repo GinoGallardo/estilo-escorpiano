@@ -4,7 +4,9 @@ import Logo from "./Logo";
 import NavLink from "./NavLink";
 import SocialNetwork from "./SocialNetwork";
 import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+
+import HamburgerIcon from "../icons/HamburgerIcon";
+import CloseIcon from "../icons/CloseIcon";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -12,15 +14,16 @@ const Header = () => {
   return (
     <>
       <header className="px-4 py-2">
-        <div className="lg:hidden">
+        <div className="lg:hidden flex items-center justify-between">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
             className="inline-flex items-center justify-center rounded-md p-2"
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon aria-hidden="true" className="size-6" />
+            <HamburgerIcon aria-hidden="true" size={40} color="#8d7955" />
           </button>
+          <Logo />
         </div>
         <div className="hidden lg:flex justify-around items-center">
           <Logo />
@@ -42,10 +45,10 @@ const Header = () => {
               className="text-gray-700"
             >
               <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              <CloseIcon aria-hidden="true" size={40} color="#8d7955" />
             </button>
           </div>
-          <div className="flex flex-col justify-center items-stretch">
+          <div className="flex flex-col gap-y-6 justify-center items-center">
             <Logo />
             <NavLink />
             <SocialNetwork />

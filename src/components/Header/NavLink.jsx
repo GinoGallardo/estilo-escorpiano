@@ -1,11 +1,11 @@
 import { PopoverGroup } from "@headlessui/react";
 
 const link = [
-  { name: "Inicio", href: "#" },
-  { name: "Servicios", href: "#" },
-  { name: "Acerca de", href: "#" },
-  { name: "Productos", href: "#" },
-  { name: "Contacto", href: "#" },
+  { name: "Inicio", href: "/" },
+  { name: "Servicios", href: "/services" },
+  { name: "Acerca de", href: "/about" },
+  { name: "Productos", href: "/products" },
+  { name: "Contacto", href: "/contact" },
 ];
 
 const NavLink = () => {
@@ -16,7 +16,7 @@ const NavLink = () => {
           <div key={index}>
             <a
               href={item.href}
-              className="text-lg font-bebas tracking-widest font-light hover:text-primary text-gray-900"
+              className="text-xl lg:text-lg text-parraf font-bebas tracking-widest font-light hover:text-primary"
             >
               {item.name}
             </a>

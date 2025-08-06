@@ -3,14 +3,13 @@ export default {
   theme: {
     extend: {
       colors: {
+        title: "#1A1E21",
+        parraf: "#484B4D",
         primary: "#cba96f",
         secondary: "#8d7955",
       },
       fontFamily: {
-        figtree: ['"Figtree"', "sans-serif"],
-        quintessential: ['"Quintessential"', "serif"],
-        permanent: ['"Permanent Marker"', "cursive"],
-        boldonse: ['"Boldonse"', "system-ui"],
+        poppins: ['"Poppins"', 'sans-serif'],
         bebas: ['"Bebas Neue"', "sans-serif"],
         lora: ['"Lora"', "serif"],
       },
