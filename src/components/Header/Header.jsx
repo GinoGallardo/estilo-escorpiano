@@ -3,7 +3,7 @@ import { useState } from "react";
 import Logo from "./Logo";
 import NavLink from "./NavLink";
 import SocialNetwork from "./SocialNetwork";
-import { Dialog } from "@headlessui/react";
+import { Dialog, DialogPanel } from "@headlessui/react";
 
 import HamburgerIcon from "../icons/HamburgerIcon";
 import CloseIcon from "../icons/CloseIcon";
@@ -20,7 +20,6 @@ const Header = () => {
             onClick={() => setMobileMenuOpen(true)}
             className="inline-flex items-center justify-center rounded-md p-2"
           >
-            <span className="sr-only">Open main menu</span>
             <HamburgerIcon aria-hidden="true" size={40} color="#8d7955" />
           </button>
           <Logo />
@@ -37,14 +36,13 @@ const Header = () => {
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
-        <Dialog.Panel className="fixed bg-white w-full h-screen p-6 shadow-lg">
+        <DialogPanel className="fixed bg-white w-full h-screen p-6 shadow-lg">
           <div className="flex justify-between items-center mb-6">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
               className="text-gray-700"
             >
-              <span className="sr-only">Close menu</span>
               <CloseIcon aria-hidden="true" size={40} color="#8d7955" />
             </button>
           </div>
@@ -53,7 +51,7 @@ const Header = () => {
             <NavLink />
             <SocialNetwork />
           </div>
-        </Dialog.Panel>
+        </DialogPanel>
       </Dialog>
     </>
   );
