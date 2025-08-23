@@ -5,15 +5,15 @@ import NavLink from "./NavLink";
 import SocialNetwork from "./SocialNetwork";
 import { Dialog, DialogPanel } from "@headlessui/react";
 
-import HamburgerIcon from "../icons/HamburgerIcon";
-import CloseIcon from "../icons/CloseIcon";
+import HamburgerIcon from "../ui/icons/HamburgerIcon";
+import CloseIcon from "../ui/icons/CloseIcon";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <>
-      <header className="px-4 py-2">
+      <header className="px-4 py-2 max-w-7xl mx-auto">
         <div className="lg:hidden flex items-center justify-between">
           <button
             type="button"

@@ -16,7 +16,7 @@ const NavLink = () => {
           <div key={index}>
             <a
               href={item.href}
-              className="text-xl lg:text-lg text-parraf font-bebas tracking-widest font-light hover:text-primary"
+              className="relative text-parraf font-bebas pb-1  tracking-widest font-light after:content-[''] hover:text-primary after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-primary hover:after:w-full after:transition-all"
             >
               {item.name}
             </a>

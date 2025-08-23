@@ -1,4 +1,4 @@
-import ScissorsIcon from "../../icons/ScissorsIcon";
+import ScissorsIcon from "../../ui/icons/ScissorsIcon";
 
 const products = [
   {
@@ -46,7 +46,7 @@ const products = [
 
 const ServicesCard = () => {
   return (
-    <div className="mt-6 grid grid-cols-1 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
+    <div className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8  max-w-7xl mx-4 lg:mx-auto">
       {products.slice(0, 3).map((product) => (
         <div
           key={product.id}
