@@ -5,8 +5,7 @@ import NavLink from "./NavLink";
 import SocialNetwork from "./SocialNetwork";
 import { Dialog, DialogPanel } from "@headlessui/react";
 
-import HamburgerIcon from "../ui/icons/HamburgerIcon";
-import CloseIcon from "../ui/icons/CloseIcon";
+import {HamburgerIcon, CloseIcon } from "../ui/icons/icons";
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

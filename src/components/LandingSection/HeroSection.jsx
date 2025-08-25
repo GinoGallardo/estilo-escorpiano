@@ -1,4 +1,3 @@
-import ImageHero from "../../assets/img-hero.png";
 import ShadowButton from "../../components/ui/ShadowButton";
 
 const HeroSection = () => {
@@ -19,7 +18,7 @@ const HeroSection = () => {
       </div>
       <img
         className="lg:w-2/5 rounded-3xl mt-20"
-        src={ImageHero}
+        src="/assets/img-hero.png"
         alt="Avatar de la estilista secando el cabello a su clienta"
       />
     </section>

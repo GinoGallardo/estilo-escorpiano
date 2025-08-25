@@ -1,5 +1,4 @@
-import FacebookIcon from "../ui/icons/FacebookIcon";
-import InstagramIcon from "../ui/icons/InstagramIcon";
+import {FacebookIcon, InstagramIcon} from "../ui/icons/icons";
 
 const SocialNetwork = () => {
   return (
