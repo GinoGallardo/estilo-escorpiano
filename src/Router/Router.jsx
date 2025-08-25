@@ -3,7 +3,7 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Landing from "../pages/Landing/Landing";
 import Services from "../pages/Service/Services";
-import About from "../pages/about/About";
+import About from "../pages/About/About";
 import Products from "../pages/Products/Products";
 import Contact from "../pages/Contact/Contact";
 
