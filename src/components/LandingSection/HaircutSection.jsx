@@ -14,8 +14,8 @@ const HaircutSection = () => {
         <source src={videoDeCorte} type="video/mp4" />
       </video>
       <article className="flex flex-col gap-y-6">
-        <h2 className="text-2xl font-semibold tracking-widest text-primary font-poppins">CORTE DE PELO MODERNO</h2>
-        <h3 className="text-4xl text-center lg:text-start lg:text-6xl text-title font-poppins font-bold tracking-wider">
+        <h2 className="text-lg md:text-2xl text-center font-semibold tracking-widest text-primary font-poppins">CORTE DE PELO MODERNO</h2>
+        <h3 className="text-2xl md:text-4xl text-center lg:text-start lg:text-6xl text-title font-poppins font-bold tracking-wider">
           "Transforma tu estilo con precisión y creatividad hoy"
         </h3>
         <p className="text-xl text-center lg:text-start text-parraf font-lora">

@@ -1,8 +1,8 @@
 import HeroSection from "../../components/LandingSection/HeroSection";
 import ServicesSection from "../../components/LandingSection/ServicesSection/SevicesSection";
-import Logo from "../../components/Header/Logo"
 import HaircutSection from "../../components/LandingSection/HaircutSection";
 import { ExclusiveDeals } from "../../components/LandingSection/ExclusiveDeals";
+import ClientFeedback from "../../components/LandingSection/ClientFeedback/ClientFeedback";
 
 const Landing = () => {
   return (
@@ -11,7 +11,7 @@ const Landing = () => {
       <ServicesSection />
       <HaircutSection />
       <ExclusiveDeals />
-      <Logo />
+      <ClientFeedback />
     </main>
   );
 };
