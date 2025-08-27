@@ -1,7 +1,15 @@
+import { useEffect, useState } from "react";
 import KarinaBN from "/assets/karina-bn.png";
-import services from "/public/data/services.json";
 
 const HeroServiceImage = () => {
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    fetch("/data/services.json")
+      .then((res) => res.json())
+      .then((data) => setServices(data));
+  }, []);
+
   return (
     <article
       className="flex items-center justify-center lg:w-1/2 lg:h-[700px] bg-center bg-cover"
