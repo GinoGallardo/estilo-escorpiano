@@ -1,5 +1,5 @@
 import ShadowButton from "../ui/ShadowButton"
-import lavadoExclusivo from "../../../public/assets/lavado-exclusivo.png"
+import lavadoExclusivo from "/assets/lavado-exclusivo.png"
 
 export const ExclusiveDeals = () => {
   return (

@@ -1,4 +1,4 @@
-import videoDeCorte from "../../../public/assets/services/servicio-de-corte.mp4";
+import videoDeCorte from "/assets/services/servicio-de-corte.mp4";
 
 const HaircutSection = () => {
   return (

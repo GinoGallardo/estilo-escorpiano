@@ -1,5 +1,5 @@
-import KarinaBN from "../../../../public/assets/karina-bn.png";
-import services from "../../../../public/data/services.json";
+import KarinaBN from "/assets/karina-bn.png";
+import services from "/public/data/services.json";
 
 const HeroServiceImage = () => {
   return (

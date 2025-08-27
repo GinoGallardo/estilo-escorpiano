@@ -1,4 +1,4 @@
-import services from '../../../../public/data/services.json'
+import services from '/public/data/services.json'
 import { ScissorsIcon, HairDryerIcon, HairIronIcon } from "../../ui/icons/icons";
 
 const iconMap = {

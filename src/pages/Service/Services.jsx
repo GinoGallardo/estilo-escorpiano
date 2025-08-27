@@ -1,5 +1,5 @@
 import HeroService from "./components/HeroService";
-import Baner from "../../../public/assets/baner-servicios.jpg";
+import Baner from "/assets/baner-servicios.jpg";
 import ServicesCard from "../../components/LandingSection/ServicesSection/ServicesCard";
 import ClientFeedback from "../../components/LandingSection/ClientFeedback/ClientFeedback";
 
