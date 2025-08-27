@@ -52,17 +52,17 @@ const CardClientFeedback = () => {
       >
         {people.slice(0, 3).map((person) => (
           <li key={person.name}>
-            <div className="flex flex-col items-center gap-y-6">
-              <div className="rounded-full">
+            <div className="flex flex-col items-center gap-y-6  flex-1 justify-between h-full">
+              <div className="flex flex-col items-center rounded-full">
                 <img
                   src={person.imageUrl}
                   alt={person.name}
                   className="size-28 rounded-full mb-4"
                 />
+                <p className="text-xl text-center text-parraf font-lora">
+                  {person.feedback}
+                </p>
               </div>
-              <p className="text-xl text-center text-parraf font-lora">
-                {person.feedback}
-              </p>
               <h3 className="text-xl font-semibold tracking-widest text-primary font-poppins">
                 {person.name}
               </h3>

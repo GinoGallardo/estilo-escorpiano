@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ShadowButton from "../../ui/ShadowButton";
 import ServicesCard from "./ServicesCard";
 
@@ -8,9 +9,14 @@ const SevicesSection = () => {
         <font className="text-center lg:text-start text-4xl font-poppins font-bold tracking-wide">
           Nuestros Servicios
         </font>
-        <ShadowButton children="EPLORAR MÁS" className="w-48 border-2 border-[#484B4D] shadow-[#484B4D] text-[#ffffff] hover:bg-[#000000]"/>
+        <Link to="/services">
+          <ShadowButton
+            children="EPLORAR MÁS"
+            className="w-48 border-2 border-[#484B4D] shadow-[#484B4D] text-[#ffffff] hover:bg-[#000000]"
+          />
+        </Link>
       </div>
-      <ServicesCard />
+      <ServicesCard limit={3} />
       <div className="w-8/12 border-b-[0.5px] border-[#FFFFFF] bg-title opacity-10 mt-20"></div>
     </section>
   );
