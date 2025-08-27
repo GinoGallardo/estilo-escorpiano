@@ -18,7 +18,7 @@ const ServicesCard = ({ limit }) => {
     fetch("/data/services.json")
       .then((res) => res.json())
       .then((data) => setServices(data));
-  });
+  }, []);
 
   const displayedServices = limit ? services.slice(0, limit) : services;
   return (
