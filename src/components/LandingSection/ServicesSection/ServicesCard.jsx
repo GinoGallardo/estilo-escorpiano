@@ -15,10 +15,21 @@ const ServicesCard = ({ limit }) => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch("/data/services.json")
-      .then((res) => res.json())
-      .then((data) => setServices(data));
-  }, []);
+  fetch('/data/services.json')
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log('Servicios cargados:', data);
+      setServices(data); // si tienes un estado
+    })
+    .catch((error) => {
+      console.error('Error al cargar services.json:', error);
+    });
+}, []);
 
   const displayedServices = limit ? services.slice(0, limit) : services;
   return (
