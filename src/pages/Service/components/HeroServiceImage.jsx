@@ -23,7 +23,7 @@ const HeroServiceImage = () => {
 
   return (
     <article
-      className="flex items-center justify-center lg:w-1/2 lg:h-[700px] bg-center bg-cover"
+      className="flex items-center justify-center  lg:h-[900px] bg-no-repeat bg-center bg-cover"
       style={{ backgroundImage: `url(${KarinaBN})` }}
     >
       <ul role="list" className="w-10/12 divide-y divide-white/5">
