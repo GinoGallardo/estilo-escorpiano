@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const link = [
   { name: "Inicio", href: "/" },
   { name: "Servicios", href: "/services" },
-  { name: "Acerca de", href: "/about" },
+  { name: "Sobre mí", href: "/about" },
   { name: "Productos", href: "/products" },
   { name: "Contacto", href: "/contact" },
 ];

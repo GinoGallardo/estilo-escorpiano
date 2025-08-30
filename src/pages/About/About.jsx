@@ -1,5 +1,6 @@
-import Baner from "/assets/baner-contac.jpg";
+import Baner from "/assets/baner-aboutMe.jpg";
 import ClientFeedback from "../../components/LandingSection/ClientFeedback/ClientFeedback";
+import HeroAboutMe from "./components/HeroAboutMe";
 
 const About = () => {
   return (
@@ -12,6 +13,7 @@ const About = () => {
           Sobre mí
         </h2>
       </section>
+      <HeroAboutMe />
       <section className="flex flex-col text-[#FFFFFF] justify-center lg:mx-auto py-10 items-center gap-x-10 bg-title">
         <div className="w-8/12 border-b-[0.5px] border-[#FFFFFF] bg-title opacity-10 mt-20"></div>
       </section>
