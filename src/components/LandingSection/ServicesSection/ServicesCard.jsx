@@ -3,12 +3,14 @@ import {
   ScissorsIcon,
   HairDryerIcon,
   HairIronIcon,
+  CustomIcon
 } from "../../ui/icons/icons";
 
 const iconMap = {
   scissors: <ScissorsIcon />,
   hairdryer: <HairDryerIcon />,
   hairiron: <HairIronIcon />,
+  customIcon: <CustomIcon />,
 };
 
 const ServicesCard = ({ limit }) => {

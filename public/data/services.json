@@ -37,9 +37,9 @@
   },
   {
     "id": 5,
-    "name": "Color",
-    "icon": "hairiron",
-    "imageSrc": "/assets/services/color.jpg",
+    "name": "Peinado",
+    "icon": "customIcon",
+    "imageSrc": "/assets/services/peinados.jpg",
     "imageAlt": "Front of men's Basic Tee in dark gray.",
     "price": "$35",
     "description": "Tonos vibrantes, personalizados y de larga duración"
