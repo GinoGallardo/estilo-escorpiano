@@ -3,7 +3,9 @@ import {
   ScissorsIcon,
   HairDryerIcon,
   HairIronIcon,
-  CustomIcon
+  CustomIcon,
+  SearchIcon,
+  BottleIcon
 } from "../../ui/icons/icons";
 
 const iconMap = {
@@ -11,6 +13,8 @@ const iconMap = {
   hairdryer: <HairDryerIcon />,
   hairiron: <HairIronIcon />,
   customIcon: <CustomIcon />,
+  searchIcon: <SearchIcon />,
+  bottleIcon: <BottleIcon />
 };
 
 const ServicesCard = ({ limit }) => {

@@ -4,53 +4,53 @@
     "name": "Corte de pelo",
     "icon": "scissors",
     "imageSrc": "/assets/services/corte-pelo.jpg",
-    "imageAlt": "Front of men's Basic Tee in black.",
+    "imageAlt": "Corte de pelo moderno y masculino.",
     "price": "$35",
-    "description": "Moderno, preciso, favorecedor y lleno de estilo"
+    "description": "Moderno, preciso, favorecedor y lleno de estilo."
   },
   {
     "id": 2,
     "name": "Alisado",
     "icon": "hairdryer",
     "imageSrc": "/assets/services/alisado.jpg",
-    "imageAlt": "Front of men's Basic Tee in white.",
+    "imageAlt": "Alisado profesional en cabello.",
     "price": "$35",
-    "description": "Cabello liso, suave, brillante y sin frizz"
+    "description": "Cabello liso, suave, brillante y sin frizz."
   },
   {
     "id": 3,
-    "name": "Color",
+    "name": "Colorimetría",
     "icon": "hairiron",
     "imageSrc": "/assets/services/color.jpg",
-    "imageAlt": "Front of men's Basic Tee in dark gray.",
+    "imageAlt": "Aplicación de color en el cabello.",
     "price": "$35",
-    "description": "Tonos vibrantes, personalizados y de larga duración"
+    "description": "Tonos vibrantes, personalizados y de larga duración."
   },
   {
     "id": 4,
-    "name": "Baño de crema",
-    "icon": null,
+    "name": "Nutriciones",
+    "icon": "bottleIcon",
     "imageSrc": "/assets/services/lavado.jpg",
-    "imageAlt": "Front of men's Artwork Tee in peach.",
+    "imageAlt": "Tratamiento de nutrición capilar.",
     "price": "$35",
-    "description": "Nutrición profunda, suavidad y brillo intenso"
+    "description": "Nutrición profunda para restaurar suavidad y brillo intenso."
   },
   {
     "id": 5,
-    "name": "Peinado",
+    "name": "Peinados",
     "icon": "customIcon",
     "imageSrc": "/assets/services/peinados.jpg",
-    "imageAlt": "Front of men's Basic Tee in dark gray.",
+    "imageAlt": "Peinado elegante realizado en cabello.",
     "price": "$35",
-    "description": "Tonos vibrantes, personalizados y de larga duración"
+    "description": "Estilos únicos, elegantes y adaptados a cada ocasión."
   },
   {
     "id": 6,
-    "name": "Baño de crema",
-    "icon": null,
-    "imageSrc": "/assets/services/lavado.jpg",
-    "imageAlt": "Front of men's Artwork Tee in peach.",
+    "name": "Técnica Capilar",
+    "icon": "searchIcon",
+    "imageSrc": "/assets/services/tecnica_capilar.jpg",
+    "imageAlt": "Aplicación de técnica capilar.",
     "price": "$35",
-    "description": "Nutrición profunda, suavidad y brillo intenso"
+    "description": "Tratamientos avanzados para fortalecer y revitalizar el cabello."
   }
 ]

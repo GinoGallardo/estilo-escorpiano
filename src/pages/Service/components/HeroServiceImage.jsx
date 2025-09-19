@@ -34,7 +34,6 @@ const HeroServiceImage = () => {
           >
             <div className="w-full text-2xl lg:text-4xl font-playfair flex justify-between items-baseline">
               <h3>{service.name}</h3>
-              <h5>{service.price}</h5>
             </div>
             <p className="font-poppins text-sm lg:text-base font-extralight tracking-widest">
               {service.description}
