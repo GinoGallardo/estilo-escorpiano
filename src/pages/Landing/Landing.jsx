@@ -4,6 +4,7 @@ import HaircutSection from "../../components/LandingSection/HaircutSection";
 import { ExclusiveDeals } from "../../components/LandingSection/ExclusiveDeals";
 import ClientFeedback from "../../components/LandingSection/ClientFeedback/ClientFeedback";
 
+
 const Landing = () => {
   return (
     <main className="lg:px-0">
@@ -12,6 +13,7 @@ const Landing = () => {
       <HaircutSection />
       <ExclusiveDeals />
       <ClientFeedback />
+      
     </main>
   );
 };
