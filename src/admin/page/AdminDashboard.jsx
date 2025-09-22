@@ -34,7 +34,7 @@ function AdminDashboard() {
           Cerrar sesión
         </button>
       </aside>
-      <main className="ml-60 flex-1 p-6 overflow">
+      <main className="ml-60 flex-1 p-6 bg-black overflow">
         <Outlet />
       </main>
     </div>

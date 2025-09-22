@@ -40,14 +40,14 @@ function ServiceForm() {
   const servicesCollection = collection(db, "services"); // tu colección en Firestore
 
   // Leer servicios de Firebase
-  const fetchServices = async () => {
+  const fetchServices = (async () => {
     const data = await getDocs(servicesCollection);
     setServices(data.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-  };
+  }, [servicesCollection]);
 
   useEffect(() => {
     fetchServices();
-  }, []);
+  }, [fetchServices]);
 
   // Agregar nuevo servicio
   const handleAdd = async (e) => {
@@ -120,7 +120,7 @@ function ServiceForm() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
-          className="border p-2 mr-2"
+          className="border p-2 mr-2  bg-white/20 text-white"
         />
         <input
           type="text"
@@ -128,20 +128,20 @@ function ServiceForm() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
-          className="border p-2 mr-2"
+          className="border p-2 mr-2 bg-white/20 text-white"
         />
         <input
           type="file"
           accept="image/*"
           onChange={(e) => setImageFile(e.target.files[0])}
-          className="border p-2"
+          className="border p-2 mr-2 bg-white/20 text-white"
         />
         <input
           type="text"
           placeholder="Icono por defecto"
           value={icon}
           onChange={(e) => setIcon(e.target.value)}
-          className="border p-2 mr-2"
+          className="border p-2 mr-2  bg-white/20 text-white"
         />
         <button
           type="submit"
@@ -150,12 +150,14 @@ function ServiceForm() {
           {editingId ? "Actualizar" : "Agregar"}
         </button>
       </form>
-      <ServicesCard
+      <div className="flex gap-8">
+        <ServicesCard
         services={services}
         isDashboard={true}
         onEdit={handleEdit}
         onDelete={handleDelete}
       />
+      </div>
     </div>
   );
 }

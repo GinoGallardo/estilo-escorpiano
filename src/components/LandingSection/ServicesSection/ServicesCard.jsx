@@ -11,8 +11,8 @@ const iconMap = {
   tijera: <ScissorsIcon />,
   secador: <HairDryerIcon />,
   tintura: <HairIronIcon />,
-  customIcon: <CustomIcon />,
-  searchIcon: <SearchIcon />,
+  peine: <CustomIcon />,
+  lupa: <SearchIcon />,
   lavado: <BottleIcon />,
 };
 
@@ -30,8 +30,24 @@ const ServicesCard = ({
         <div
           key={service.id}
           className="group relative w-full flex flex-col"
-          style={{ maxHeight: 600 }}
+          style={{ maxHeight: isDashboard ? 800 : 600 }}
         >
+          {isDashboard && (
+            <div className="absolute flex justify-end z-50 p-4 gap-x-4 w-full">
+              <button
+                className="bg-blue-500 text-white px-4 py-2 rounded"
+                onClick={() => onEdit(service)}
+              >
+                Editar
+              </button>
+              <button
+                className="bg-red-500 text-white px-4 py-2 rounded"
+                onClick={() => onDelete(service.id)}
+              >
+                Eliminar
+              </button>
+            </div>
+          )}
           <img
             alt={service.title}
             src={service.image ? service.image : "/placeholder-image.png"} // <-- placeholder
@@ -49,22 +65,6 @@ const ServicesCard = ({
               {service.description}
             </p>
           </div>
-          {isDashboard && (
-            <div className="flex justify-center gap-x-4 w-full">
-              <button
-                className="bg-blue-500 text-white px-4 py-2 rounded"
-                onClick={() => onEdit(service)}
-              >
-                Editar
-              </button>
-              <button
-                className="bg-red-500 text-white px-4 py-2 rounded"
-                onClick={() => onDelete(service.id)}
-              >
-                Eliminar
-              </button>
-            </div>
-          )}
         </div>
       ))}
     </div>
