@@ -1,8 +1,21 @@
+import { useState, useEffect } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../../firebase";
 import { Link } from "react-router-dom";
 import ShadowButton from "../../ui/ShadowButton";
 import ServicesCard from "./ServicesCard";
 
 const SevicesSection = () => {
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      const servicesCollection = collection(db, "services");
+      const data = await getDocs(servicesCollection);
+      setServices(data.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    };
+    fetchServices();
+  }, []);
   return (
     <section className="flex flex-col text-[#FFFFFF] justify-center lg:mx-auto py-10 items-center gap-x-10 lg:h-[1014px] bg-title">
       <div className="w-full flex flex-col lg:flex-row justify-center items-center lg:justify-between  max-w-7xl mx-4 lg:mx-auto gap-y-6">
@@ -16,7 +29,7 @@ const SevicesSection = () => {
           />
         </Link>
       </div>
-      <ServicesCard limit={3} />
+      <ServicesCard limit={3} services={services} />
       <div className="w-8/12 border-b-[0.5px] border-[#FFFFFF] bg-title opacity-10 mt-20"></div>
     </section>
   );

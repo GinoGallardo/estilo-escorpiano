@@ -1,9 +1,23 @@
+import { useState, useEffect } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase";
 import HeroService from "./components/HeroService";
 import Baner from "/assets/baner-servicios.jpg";
 import ServicesCard from "../../components/LandingSection/ServicesSection/ServicesCard";
 import ClientFeedback from "../../components/LandingSection/ClientFeedback/ClientFeedback";
 
 const Services = () => {
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      const servicesCollection = collection(db, "services");
+      const data = await getDocs(servicesCollection);
+      setServices(data.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+    };
+    fetchServices();
+  }, []);
+
   return (
     <>
       <section
@@ -16,7 +30,7 @@ const Services = () => {
       </section>
       <HeroService />
       <section className="flex flex-col text-[#FFFFFF] justify-center lg:mx-auto py-10 items-center gap-x-10 bg-title">
-        <ServicesCard />
+        <ServicesCard services={services} />
         <div className="w-8/12 border-b-[0.5px] border-[#FFFFFF] bg-title opacity-10 mt-20"></div>
       </section>
       <ClientFeedback />

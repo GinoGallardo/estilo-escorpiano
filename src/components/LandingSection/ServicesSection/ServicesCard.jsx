@@ -1,42 +1,28 @@
-import { useState, useEffect } from "react";
 import {
   ScissorsIcon,
   HairDryerIcon,
   HairIronIcon,
   CustomIcon,
   SearchIcon,
-  BottleIcon
+  BottleIcon,
 } from "../../ui/icons/icons";
 
 const iconMap = {
-  scissors: <ScissorsIcon />,
-  hairdryer: <HairDryerIcon />,
-  hairiron: <HairIronIcon />,
+  tijera: <ScissorsIcon />,
+  secador: <HairDryerIcon />,
+  tintura: <HairIronIcon />,
   customIcon: <CustomIcon />,
   searchIcon: <SearchIcon />,
-  bottleIcon: <BottleIcon />
+  lavado: <BottleIcon />,
 };
 
-const ServicesCard = ({ limit }) => {
-  const [services, setServices] = useState([]);
-
-  useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data/services.json`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log("Servicios cargados:", data);
-        setServices(data);
-      })
-      .catch((error) => {
-        console.error("Error al cargar services.json:", error);
-      });
-  }, []);
-
+const ServicesCard = ({
+  services = [],
+  limit,
+  isDashboard = false,
+  onEdit,
+  onDelete,
+}) => {
   const displayedServices = limit ? services.slice(0, limit) : services;
   return (
     <div className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8  max-w-7xl mx-4 lg:mx-auto">
@@ -47,8 +33,8 @@ const ServicesCard = ({ limit }) => {
           style={{ maxHeight: 600 }}
         >
           <img
-            alt={service.imageAlt}
-            src={service.imageSrc}
+            alt={service.title}
+            src={service.image ? service.image : "/placeholder-image.png"} // <-- placeholder
             className="w-full h-[400px] object-cover group-hover:opacity-75"
           />
           {service.icon && (
@@ -58,11 +44,27 @@ const ServicesCard = ({ limit }) => {
           )}
 
           <div className="flex flex-col justify-center items-center flex-1 py-14 px-4 bg-[#FFFFFF]">
-            <h4 className="text-2xl text-title">{service.name}</h4>
+            <h4 className="text-2xl text-title">{service.title}</h4>
             <p className="mt-1 text-center text-base font-lora font-extralight text-title">
               {service.description}
             </p>
           </div>
+          {isDashboard && (
+            <div className="flex justify-center gap-x-4 w-full">
+              <button
+                className="bg-blue-500 text-white px-4 py-2 rounded"
+                onClick={() => onEdit(service)}
+              >
+                Editar
+              </button>
+              <button
+                className="bg-red-500 text-white px-4 py-2 rounded"
+                onClick={() => onDelete(service.id)}
+              >
+                Eliminar
+              </button>
+            </div>
+          )}
         </div>
       ))}
     </div>

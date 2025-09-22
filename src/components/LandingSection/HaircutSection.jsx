@@ -1,6 +1,5 @@
-import videoDeCorte from "/assets/services/servicio-de-corte.mp4";
-
 const HaircutSection = () => {
+  const videoDeCorte = "https://res.cloudinary.com/du37cgojp/video/upload/v1758504799/servicio-de-corte_zsu1zp.mp4"
   return (
     <section className="flex flex-col lg:flex-row items-center gap-y-6 lg:gap-x-10 max-w-7xl my-10 lg:mt-32 mx-4 lg:mx-auto bg-[#FFFFFF]">
       <video

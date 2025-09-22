@@ -43,6 +43,7 @@ const HeroContactForm = () => {
                 id="first-name"
                 name="first-name"
                 type="text"
+                placeholder="Nombre y apellido"
                 autoComplete="given-name"
                 className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
               />
@@ -60,6 +61,7 @@ const HeroContactForm = () => {
                 id="email"
                 name="email"
                 type="email"
+                placeholder="email@email.com"
                 autoComplete="email"
                 className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
               />
@@ -95,6 +97,7 @@ const HeroContactForm = () => {
               <textarea
                 id="message"
                 name="message"
+                placeholder="Dejanos un mensaje aquí."
                 rows={4}
                 className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
                 defaultValue={""}
