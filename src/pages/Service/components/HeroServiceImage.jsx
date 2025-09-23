@@ -1,24 +1,27 @@
 import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../../firebase";
 import KarinaBN from "/assets/karina-bn.png";
 
 const HeroServiceImage = () => {
   const [services, setServices] = useState([]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data/services.json`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log("Servicios cargados:", data);
-        setServices(data);
-      })
-      .catch((error) => {
-        console.error("Error al cargar services.json:", error);
-      });
+    const fetchService = async () => {
+      try {
+        const servicesCol = collection(db, "services");
+        const servicesSnapshot = await getDocs(servicesCol);
+        const servicesList = servicesSnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        console.log("servicios cargados", servicesList);
+        setServices(servicesList);
+      } catch (error) {
+        console.log("error al cargar servicios de firestore", error);
+      }
+    };
+    fetchService();
   }, []);
 
   return (
@@ -29,11 +32,11 @@ const HeroServiceImage = () => {
       <ul role="list" className="w-10/12 divide-y divide-white/5">
         {services.slice(0, 4).map((service) => (
           <li
-            key={service.name}
+            key={service.title}
             className="flex flex-col text-white justify-between gap-y-6 py-5"
           >
             <div className="w-full text-2xl lg:text-4xl font-playfair flex justify-between items-baseline">
-              <h3>{service.name}</h3>
+              <h3>{service.title}</h3>
             </div>
             <p className="font-poppins text-sm lg:text-base font-extralight tracking-widest">
               {service.description}

@@ -8,24 +8,22 @@ const HeroContactForm = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
     emailjs
-      .sendForm(
-        import.meta.env.YOUR_SERVICE_ID,
-        import.meta.env.YOUR_TEMPLATE_ID,
-        form.current,
-        {
-          publicKey: import.meta.env.YOUR_PUBLIC_KEY,
-        }
-      )
-      .then(
-        () => {
-          console.log("SUCCESS!");
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        }
-      );
+      .sendForm(serviceID, templateID, form.current, publicKey)
+      .then(() => {
+        console.log("SUCCESS!");
+        alert("Mensaje enviado correctamente ✅");
+        form.current.reset();
+      })
+      .catch((error) => {
+        console.log("FAILED...", error.text);
+      });
   };
+
   return (
     <div className="w-full lg:w-1/2 isolate px-6 py-24 sm:py-32 lg:px-8">
       <div
