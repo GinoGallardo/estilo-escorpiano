@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback} from "react";
 import {
   collection,
   getDocs,
@@ -30,17 +30,17 @@ function ServiceForm() {
       );
       const data = await res.json();
       console.log("Cloudinary response:", data);
-      return data.secure_url || null; // <- asegura que devuelva null si no hay URL
+      return data.secure_url || null; 
     } catch (err) {
       console.error("Error subiendo la imagen a Cloudinary:", err);
       return null;
     }
   };
 
-  const servicesCollection = collection(db, "services"); // tu colección en Firestore
+  const servicesCollection = collection(db, "services"); // colección en Firestore
 
   // Leer servicios de Firebase
-  const fetchServices = (async () => {
+  const fetchServices = useCallback(async () => {
     const data = await getDocs(servicesCollection);
     setServices(data.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
   }, [servicesCollection]);
@@ -152,11 +152,11 @@ function ServiceForm() {
       </form>
       <div className="flex gap-8">
         <ServicesCard
-        services={services}
-        isDashboard={true}
-        onEdit={handleEdit}
-        onDelete={handleDelete}
-      />
+          services={services}
+          isDashboard={true}
+          onEdit={handleEdit}
+          onDelete={handleDelete}
+        />
       </div>
     </div>
   );

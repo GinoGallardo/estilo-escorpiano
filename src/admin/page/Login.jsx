@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 
@@ -20,7 +20,7 @@ function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center w-full h-screen bg-black">
+    <div className="flex flex-col items-center justify-center w-full h-screen bg-black">
       <form
         onSubmit={handleLogin}
         className="flex flex-col gap-y-10 p-6 rounded shadow-md"
@@ -50,6 +50,7 @@ function Login() {
           Entrar
         </button>
       </form>
+      <Link className="text-primary underline" to="/">volver a la pagina</Link>
     </div>
   );
 }

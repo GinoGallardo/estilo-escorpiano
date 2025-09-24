@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import Landing from "../pages/Landing/Landing";
@@ -76,6 +76,7 @@ const Router = () => {
           </ProtectedRoute>
         }
       >
+        <Route index element={<Navigate to="services" replace />} />
         <Route path="services" element={<ServiceForm />} />
         <Route path="about" element={<AboutForm />} />
         <Route path="feedback" element={<FeedbackList />} />
